@@ -276,10 +276,54 @@ function fetchIndex(arr, ind) {
         return arr[ind];
     }
 }
-fetchIndex([1, 2, 3, 4, 5], 3)
+fetchIndex('varun', 3)
 
+/**
+ * [12] Given two dates, your function should return which one comes before the other.
+Example:
+Input: minDate('02/05/2021', '24/01/2021') ––> Output: 24/01/2021
+ */
 
+function sortDate(d1, d2) {
 
+    var d1_details = {
+        year: d1.split('/')[0],
+        month: d1.split('/')[1],
+        day: d1.split('/')[2]
+    }
+
+    var d2_details = {
+        year: d2.split('/')[0],
+        month: d2.split('/')[1],
+        day: d2.split('/')[2]
+    }
+
+    var op = ''
+
+    if (d1_details.year === d2_details.year) { //check for same year or not
+        if (d1_details.month === d2_details.month) {
+            if (d1_details.day < d2_details.day) {
+                return op += d1;
+            } else {
+                return op += d2;
+            }
+        } else {
+            if (d1_details.month < d2_details.month) {
+                return op += d1;
+            } else {
+                return op += d2;
+            }
+        }
+    } else { //when year is different
+        if (d1_details.year < d2_details.year) {
+            return op += d1;
+        } else {
+            return op += d2;
+        }
+    }
+}
+
+sortDate('2019/06/12', '2022/02/28')
 
 // ----------------------------------------------objcts-----------------------------------------
 
