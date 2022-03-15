@@ -325,6 +325,57 @@ function sortDate(d1, d2) {
 
 sortDate('2019/06/12', '2022/02/28')
 
+/**
+ * [13] Write a function which generates a secret code from a given string, by shifting characters of alphabet by N places. Example:
+Input: encodeString("neogcamp", 2) ––> Output: pgqiecor
+Explanation: 2 represents shifting alphabets by 2 places. a –> c, b –> d, c –> e and so on.
+ */
+
+const alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+function encoder(str, n) {
+
+    let ind, str_mod = '';
+    for (let i = 0; i < str.length; i++) {
+
+        for (let j = 0; j < alpha.length; j++) {
+            if (alpha[j] === str[i]) {
+                ind = j;
+                break;
+            }
+        }
+        if (ind > 26) {
+            ind -= 26;
+            str_mod += alpha[ind + 2];
+        } else {
+            str_mod += alpha[ind + 2];
+        }
+    }
+    return str_mod
+}
+
+encoder('meenank', 5)
+
+/**
+ * [14] Given a sentence, return a sentence with first letter of all words as capital.
+Example:
+Input: toSentenceCase('we are neoGrammers') ––> Output: We Are NeoGrammers
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ----------------------------------------------objcts-----------------------------------------
 
 
